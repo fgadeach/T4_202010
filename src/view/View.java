@@ -1,37 +1,36 @@
 package view;
 
-import model.data_structures.DobleListaEncadenada;
 import model.logic.Modelo;
+import model.data_structures.*;
 
 public class View 
 {
-	    /**
-	     * Metodo constructor
-	     */
-	    public View()
-	    {
-	    	
-	    }
-	    
-		public void printMenu()
-		{
-			System.out.println("0. Carga de datos.");
-			System.out.println("1. Crear arreglo de copia.");
-			System.out.println("2. Ordenamiento ShellSort.");
-			System.out.println("3. Ordenamiento MergeSort.");
-			System.out.println("4. Ordenamiento QuickSort.");
+	/**
+	 * Metodo constructor
+	 */
+	public View()
+	{
 
-		}
+	}
 
-		public void printMessage(String mensaje) {
+	public void printMenu()
+	{
+		System.out.println("0. Carga de datos.");
+		System.out.println("1. Crear arreglo de copia.");
+		System.out.println("2. Ordenamiento ShellSort.");
+		System.out.println("3. Ordenamiento MergeSort.");
+		System.out.println("4. Ordenamiento QuickSort.");
 
-			System.out.println(mensaje);
-		}		
-		
-		public void printModelo(Modelo modelo)
-		{
-			// TODO implementar
-			System.out.println(modelo.Lista());
-			
-		}
+	}
+
+	public void printMessage(String mensaje) {
+
+		System.out.println(mensaje);
+	}		
+
+	public void printModelo(Modelo modelo)
+	{
+		// TODO implementar
+
+	}
 }

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.FileReader;
 
+
 import java.util.Scanner;
 
 import org.json.simple.JSONArray;
@@ -13,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 
-import model.data_structures.DobleListaEncadenada;
+import model.data_structures.MaxColaCP;
 import model.logic.Comparendos;
 import model.logic.Modelo;
 import view.View;
@@ -23,7 +24,7 @@ public class Controller {
 	/*
 	 * 
 	 */
-	private DobleListaEncadenada<Comparendos> listaComparendos;
+	private MaxColaCP<Comparendos> listaComparendos;
 
 	/* Instancia del Modelo*/
 	private Modelo modelo;
@@ -40,7 +41,7 @@ public class Controller {
 	 */
 	public Controller()
 	{
-		listaComparendos= new DobleListaEncadenada<Comparendos>();
+		listaComparendos= new MaxColaCP<Comparendos>();
 		view = new View();
 		modelo = new Modelo();
 	}
@@ -48,7 +49,7 @@ public class Controller {
 	public void run() 
 	{
 		Scanner lector = new Scanner(System.in);
-		Comparable<Comparendos>[] arreglos = new Comparendos[listaComparendos.getSize()];
+		Comparable<Comparendos>[] arreglos = new Comparendos[listaComparendos.darNumElementos()];
 		boolean fin = false;
 		Integer dato = null;
 		Object datoS = null;
@@ -60,56 +61,7 @@ public class Controller {
 
 			int option = lector.nextInt();
 			switch(option){
-			case 0:
-				modelo = new Modelo(); 
-				modelo.loadComparendos(ruta);
-				System.out.println(modelo);
-				System.out.println("Se han cargado los datos");
-				System.out.println("Numero actual de elementos " + modelo.darTamano() + "\n---------");	
-				System.out.println("Primer Elemento: " + modelo.retornoPrimero() + "\n---------");		
-				System.out.println("Ultimo Elemento: " + modelo.retornoUltimo() + "\n---------");
-				
-				break;
 
-			case 1:
-				modelo.copiarComparendos();
-				arreglos = modelo.copiarComparendos();
-				System.out.println("Se creo el arreglo copia");
-				System.out.println("Numero de comparendos copia: " + modelo.tamanioCopia());
-				break;
-				
-			case 2:
-				long tiempoI = System.nanoTime();
-				modelo.shellsort(arreglos);
-				long tiempoF = System.nanoTime();
-				double demora = (tiempoF - tiempoI)/ 1e6;
-				modelo.primerosYUltimos();
-				System.out.println("TIEMPO DEMORA SHELLSORT: "+demora+" Micro Segundos");
-				
-				break;
-			case 3:
-				long tiempoIN = System.nanoTime();
-				modelo.mergesort(arreglos);
-				long tiempoFIN = System.nanoTime();
-				double demoraM = (tiempoFIN - tiempoIN)/ 1e6;
-				modelo.primerosYUltimos();
-				System.out.println("TIEMPO DEMORA MERGESORT: "+demoraM+" Micro Segundos");
-				
-				break;
-				
-			case 4:
-				long tiempoINI = System.nanoTime();
-				modelo.quickSort(arreglos);
-				long tiempoFINAL = System.nanoTime();
-				double demoraMI = (tiempoFINAL - tiempoINI)/ 1e6;
-				modelo.primerosYUltimos();
-				System.out.println("TIEMPO DEMORA QUICKSORT: "+demoraMI+" Micro Segundos");
-				
-				break;
-			default: 
-				System.out.println("--------- \n Opcion Invalida !! \n---------");
-				break;
-			
 			}
 		}
 	}

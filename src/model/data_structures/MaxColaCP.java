@@ -139,24 +139,21 @@ public class MaxColaCP <T extends Comparable<T>> implements IMaxColaCP<T>{
 	public T darMax() 
 	{
 		Iterator<T> iter = this.iterator();
-		Node nodoC = (Node) iter.next();	
-		Node nodoP =  primerNode;
-
-		T comparendoC = (T) nodoC.getItem();
-		T comparendoP = (T) nodoP.getItem();
+		T nodoC =  (T) iter.next();	
+		T nodoP =  nodoC;
 
 		while(iter.hasNext()) {
-			if(comparendoC.compareTo(comparendoP) > 1)
+			if(nodoC.compareTo(nodoP) > 1)
 			{
-				comparendoP=comparendoC;
+				nodoP=nodoC;
 			}
-			nodoC = (Node<Comparendos>) iter.next();	
+			nodoC = (T) iter.next();	
 		}
-		
+
 		Node <T> ultimo = primerNode;
 		ultimo.setNextNode(primerNode);
-		primerNode = nodoC;
+		primerNode.setItem(nodoC);
 
-		return comparendoP;
+		return nodoC;
 	}
 }
