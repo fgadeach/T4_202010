@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Vector;
 
-public class MaxHeapCP<T extends Comparable<T>> implements InterfazMaxHeapCp<T>
+public class MaxHeapCP<T extends Comparable<T>> implements IMaxHeapCp<T>
 {
 	private Vector<T> elementos;
-	private int n;
+
 
 	public MaxHeapCP()
 	{
@@ -17,22 +17,23 @@ public class MaxHeapCP<T extends Comparable<T>> implements InterfazMaxHeapCp<T>
 	public MaxHeapCP(int capacity)
 	{
 		elementos = new Vector<T>(capacity);
-		n =0;
+
 	}
 
 	public Integer darNumElementos() {
-		return n;
+		return elementos.size();
 	}
 
-	public void agregar(T item) {
+	public void agregar(T item) 
+	{
 		elementos.add(item);
 		siftUp();
-
 	}
 
 	public T sacarMax() {
 		if (esVacia()) throw new NoSuchElementException("Priority queue underflow");
-		if (elementos.size() == 1) {
+		if (elementos.size() == 1) 
+		{
 			return elementos.remove(0);
 		}
 		T elementoBuscado = elementos.firstElement();
@@ -49,14 +50,8 @@ public class MaxHeapCP<T extends Comparable<T>> implements InterfazMaxHeapCp<T>
 
 	public boolean esVacia() {
 
-		return n==0;
+		return elementos.size()==0;
 	}
-
-	public Iterator<T> iterator() {
-
-		return null;
-	}
-
 
 	private void siftDown() {
 		int k = 0;
@@ -96,5 +91,11 @@ public class MaxHeapCP<T extends Comparable<T>> implements InterfazMaxHeapCp<T>
 				break;
 			}
 		}
+	}
+	
+
+	public Iterator<T> iterator() {
+
+		return null;
 	}
 }

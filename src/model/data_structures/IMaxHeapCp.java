@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public interface InterfazMaxHeapCp<T extends Comparable<T>> extends Iterable<T> 
+public interface IMaxHeapCp<T extends Comparable<T>> extends Iterable<T> 
 {
 	/*
 	 * Retorna número de elementos presentes en la cola de prioridad
