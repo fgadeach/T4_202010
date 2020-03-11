@@ -113,13 +113,13 @@ public class Comparendos implements Comparable<Comparendos> {
 		int resp = 0;
 
 
-		if(this.getFECHA_HORA().compareTo(o.getFECHA_HORA()) > 1) {
+		if(this.getCOORDINATES().compareTo(o.getCOORDINATES()) > 1) {
 			resp = 1;
 		}
-		else if(this.getFECHA_HORA().compareTo(o.getFECHA_HORA()) < 1) {
+		else if(this.getCOORDINATES().compareTo(o.getCOORDINATES()) < 1) {
 			resp = -1;
 		}
-		else if(this.getFECHA_HORA().compareTo(o.getFECHA_HORA()) == 0) 
+		else if(this.getCOORDINATES().compareTo(o.getCOORDINATES()) == 0) 
 		{
 			if(this.getOBJECTID() > o.getOBJECTID()) {
 				resp = 1;
