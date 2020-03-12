@@ -114,8 +114,7 @@ public class TestMaxHeapCP <T extends Comparable<T>>
 			setUp();
 			add(obj1,obj2,obj3,obj4,obj5);
 			assertEquals(obj5, heap.sacarMax());
-			assertEquals(4,heap.darNumElementos());
-			
+			assertEquals(4,heap.darNumElementos());	
 		}
 
 		catch(Exception e)

@@ -19,6 +19,7 @@ public class Comparendos implements Comparable<Comparendos> {
 		TYPE = tipo;
 		OBJECTID = id;
 		FECHA_HORA = fecha;
+		CLASE_VEHI = clase;
 		TIPO_SERVI = tipoS;
 		INFRACCION = infraccion;
 		DES_INFRAC = descripcion;

@@ -16,11 +16,8 @@ public class View
 	public void printMenu()
 	{
 		System.out.println("0. Carga de datos.");
-		System.out.println("1. Crear arreglo de copia.");
-		System.out.println("2. Ordenamiento ShellSort.");
-		System.out.println("3. Ordenamiento MergeSort.");
-		System.out.println("4. Ordenamiento QuickSort.");
-
+		System.out.println("1. Mostrar N comparendos mas al norte (MaxCola).");
+		System.out.println("2. Mostrar N comparendos mas al norte (MaxHeap).");
 	}
 
 	public void printMessage(String mensaje) {

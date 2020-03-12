@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
 
 import model.data_structures.IMaxColaCP;
@@ -104,7 +106,7 @@ public class TestMaxColaCP <T extends Comparable<T>>
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void darMax()
 	{
@@ -120,7 +122,7 @@ public class TestMaxColaCP <T extends Comparable<T>>
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void sacarMax()
 	{
@@ -130,6 +132,7 @@ public class TestMaxColaCP <T extends Comparable<T>>
 			enQueueInOrder(obj1,obj2,obj3,obj4,obj5);
 			assertEquals(obj5, cola.sacarMax());
 			assertEquals(4,cola.darNumElementos());
+
 		}
 
 		catch(Exception e)
@@ -137,5 +140,5 @@ public class TestMaxColaCP <T extends Comparable<T>>
 			e.printStackTrace();
 		}
 	}
-	
+
 }
