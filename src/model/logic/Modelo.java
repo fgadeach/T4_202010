@@ -99,35 +99,38 @@ public class Modelo {
 	{
 		int contador = n;
 		Comparendos comparendo = null;
+		Comparendos c = null;
+		
 		while(contador>0)
 		{
-			System.out.println(contador);
-			if(listaCola.sacarMax().getCLASE_VEHI().equals(tipo))
+			comparendo = listaHeap.sacarMax();
+			if(comparendo.getCLASE_VEHI().equals(tipo))
 			{
-				comparendo = listaCola.sacarMax();
+				c = comparendo;
 				contador--;
 			}
 			contador--;
 		}
-		return comparendo.getOBJECTID() + comparendo.getCLASE_VEHI() + comparendo.getCOORDINATES();
+		return c.getOBJECTID() + c.getCLASE_VEHI() + c.getCOORDINATES();
 	}
 
 	public String comparendosMasNorteMaxHeap(int n, String tipo)
 	{
 		int contador = n;
 		Comparendos comparendo = null;
+		Comparendos c = null;
 
 		while(contador>0)
 		{
-			System.out.println(contador);
-			if(listaHeap.sacarMax().getCLASE_VEHI().equals(tipo))
+			comparendo = listaHeap.sacarMax();
+			if(comparendo.getCLASE_VEHI().equals(tipo))
 			{
-				comparendo = listaHeap.sacarMax();
+				c = comparendo;
 				contador--;
 			}
 			contador--;
 		}
-		return comparendo.getOBJECTID() + comparendo.getCLASE_VEHI() + comparendo.getCOORDINATES();
+		return c.getOBJECTID() + c.getCLASE_VEHI() + c.getCOORDINATES();
 	}
 
 	public int numeroComparendos() 
