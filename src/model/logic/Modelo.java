@@ -104,10 +104,10 @@ public class Modelo {
 		while(contador>0)
 		{
 			comparendo = listaHeap.sacarMax();
+			listaHeap.sacarMax();
 			if(comparendo.getCLASE_VEHI().equals(tipo))
 			{
 				c = comparendo;
-				contador--;
 			}
 			contador--;
 		}
@@ -123,10 +123,10 @@ public class Modelo {
 		while(contador>0)
 		{
 			comparendo = listaHeap.sacarMax();
+			listaHeap.sacarMax();
 			if(comparendo.getCLASE_VEHI().equals(tipo))
 			{
 				c = comparendo;
-				contador--;
 			}
 			contador--;
 		}
